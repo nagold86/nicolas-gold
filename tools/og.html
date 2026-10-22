@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <title>Nicolás Gold · tarjeta para compartir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Espejo de src/styles/tokens.css · Comarca de Luz.
+       La tarjeta se renderiza una vez y no hereda del sitio. */
+    :root {
+      --cielo-alto: #F0F9F3;
+      --cielo: #DCEFE3;
+      --cielo-bajo: #C9E3D5;
+      --sol: #F2BE58;
+      --sol-claro: #FBE2A0;
+      --papel: #FBF5E5;
+      --papel-alto: #FFFBEF;
+      --tinta: #1E2F22;
+      --tinta-suave: #45553F;
+      --tinta-tenue: #5E6C57;
+      --bosque: #21382A;
+      --bosque-bajo: #16261C;
+      --hoja: #5B8A43;
+      --hoja-oscura: #3D6732;
+      --hoja-clara: #8FB56A;
+      --colina-lejos: #BCD5B0;
+      --colina-lejos-2: #A8C99B;
+      --colina-medio: #84AC73;
+      --colina-cerca: #5F8C4D;
+      --colina-sombra: #487241;
+      --rio: #2F7F77;
+      --rio-claro: #78BCAF;
+      --rio-brillo: #E6F7F0;
+      --miel: #D9A03C;
+      --miel-claro: #F2C978;
+      --miel-hondo: #7A5314;
+      --crema: #FAF3DE;
+      --crema-tenue: #E7DFC8;
+      --tronco: #5C4631;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      color: var(--tinta);
+      font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .tarjeta {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--cielo-alto) 0%, var(--cielo) 58%, var(--cielo-bajo) 100%);
+    }
+
+    .cielo {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(560px 440px at 1000px 96px, rgba(251, 226, 160, 0.9), transparent 64%),
+        radial-gradient(820px 500px at 6% -8%, var(--papel-alto), transparent 68%);
+    }
+
+    .sol {
+      position: absolute;
+      top: 22px;
+      left: 896px;
+      width: 216px;
+      height: 216px;
+    }
+
+    .sol__rayos {
+      position: absolute;
+      inset: -54%;
+      border-radius: 50%;
+      background: repeating-conic-gradient(
+        from 0deg,
+        rgba(242, 190, 88, 0.34) 0deg 6deg,
+        transparent 6deg 24deg
+      );
+      -webkit-mask-image: radial-gradient(circle, #000 0 26%, transparent 70%);
+      mask-image: radial-gradient(circle, #000 0 26%, transparent 70%);
+    }
+
+    .sol__disco {
+      position: absolute;
+      inset: 30%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 42% 36%, var(--sol-claro) 0 24%, var(--sol) 70%, rgba(242, 190, 88, 0.35) 100%);
+      box-shadow: 0 0 96px rgba(242, 190, 88, 0.55);
+    }
+
+    .texto {
+      position: absolute;
+      top: 60px;
+      left: 84px;
+      width: 720px;
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .sello {
+      flex: none;
+      width: 96px;
+      height: 96px;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--miel-hondo);
+      font-family: "IBM Plex Mono", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      line-height: 1.7;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--tinta);
+      font-family: "Cinzel", "Trajan Pro", Georgia, serif;
+      font-size: 76px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.02;
+      white-space: nowrap;
+    }
+
+    .rol {
+      margin: 18px 0 0 122px;
+      color: var(--tinta-suave);
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    .rol span {
+      color: var(--tinta-tenue);
+      font-style: italic;
+    }
+
+    .paisaje {
+      position: absolute;
+      left: 0;
+      bottom: 118px;
+      display: block;
+      width: 1200px;
+      height: 300px;
+    }
+
+    .banda {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 32px;
+      height: 118px;
+      padding: 0 84px;
+      background: linear-gradient(180deg, var(--bosque) 0%, var(--bosque-bajo) 100%);
+      color: var(--crema);
+    }
+
+    .banda::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(242, 201, 120, 0.65) 22%, rgba(242, 201, 120, 0.65) 78%, transparent);
+    }
+
+    .lema {
+      margin: 0;
+      color: var(--crema);
+      font-size: 23px;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .dato {
+      margin: 0;
+      color: var(--crema-tenue);
+      font-family: "IBM Plex Mono", Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .dato--miel {
+      color: var(--miel-claro);
+      justify-self: end;
+      text-align: right;
+    }
+
+    .agua-alta { stop-color: var(--rio-claro); stop-opacity: 0.96; }
+    .agua-baja { stop-color: var(--rio); stop-opacity: 0.98; }
+    .orilla-alta { stop-color: var(--colina-cerca); }
+    .orilla-media { stop-color: var(--colina-sombra); }
+    .orilla-baja { stop-color: var(--bosque-bajo); }
+  </style>
+</head>
+<body>
+  <main class="tarjeta">
+    <div class="cielo"></div>
+
+    <div class="sol">
+      <span class="sol__rayos"></span>
+      <span class="sol__disco"></span>
+    </div>
+
+    <div class="texto">
+      <div class="marca">
+        <svg class="sello" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="58" fill="#21382A" />
+          <circle cx="60" cy="60" r="51" fill="none" stroke="#F2C978" stroke-opacity="0.55" stroke-width="1.2" />
+          <circle cx="60" cy="60" r="43" fill="none" stroke="#F2C978" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="1.5 4.5" />
+          <text x="60" y="73" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-size="34" font-weight="600" fill="#F2C978">NG</text>
+        </svg>
+        <div>
+          <p class="kicker">Ciencia de datos · IA · Operaciones IT</p>
+          <h1>Nicolás Gold</h1>
+        </div>
+      </div>
+      <p class="rol">Técnico Superior en Ciencia de Datos e IA <span>· en curso</span></p>
+    </div>
+
+    <svg class="paisaje" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="agua-alta"></stop>
+          <stop offset="1" class="agua-baja"></stop>
+        </linearGradient>
+        <linearGradient id="orilla-izq" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="orilla-alta"></stop>
+          <stop offset="0.55" class="orilla-media"></stop>
+          <stop offset="1" class="orilla-baja"></stop>
+        </linearGradient>
+        <linearGradient id="orilla-der" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="orilla-media"></stop>
+          <stop offset="1" class="orilla-baja"></stop>
+        </linearGradient>
+        <linearGradient id="orilla-frente" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#5F8C4D"></stop>
+          <stop offset="0.35" stop-color="#2E4A35"></stop>
+          <stop offset="1" stop-color="#21382A"></stop>
+        </linearGradient>
+
+        <g id="arbol-a">
+          <rect x="-2" y="-26" width="4" height="26" fill="#5C4631"></rect>
+          <circle cx="0" cy="-38" r="18" fill="#2E4A35"></circle>
+          <circle cx="-9" cy="-31" r="13" fill="#3D6732"></circle>
+          <circle cx="11" cy="-31" r="14" fill="#2E4A35"></circle>
+        </g>
+        <g id="arbol-b">
+          <rect x="-2" y="-34" width="4" height="34" fill="#5C4631"></rect>
+          <circle cx="0" cy="-46" r="15" fill="#2E4A35"></circle>
+          <circle cx="-8" cy="-38" r="11" fill="#3D6732"></circle>
+          <circle cx="9" cy="-38" r="12" fill="#2E4A35"></circle>
+          <circle cx="1" cy="-56" r="11" fill="#2E4A35"></circle>
+        </g>
+        <g id="arbol-c">
+          <rect x="-1.5" y="-20" width="3" height="20" fill="#5C4631"></rect>
+          <circle cx="0" cy="-30" r="13" fill="#2E4A35"></circle>
+          <circle cx="-6" cy="-25" r="9" fill="#3D6732"></circle>
+          <circle cx="7" cy="-25" r="10" fill="#2E4A35"></circle>
+        </g>
+      </defs>
+
+      <g fill="#FFFBEF" opacity="0.78">
+        <ellipse cx="236" cy="44" rx="56" ry="12"></ellipse>
+        <ellipse cx="278" cy="35" rx="38" ry="10"></ellipse>
+        <ellipse cx="202" cy="36" rx="26" ry="8"></ellipse>
+        <ellipse cx="582" cy="58" rx="46" ry="10"></ellipse>
+        <ellipse cx="618" cy="50" rx="30" ry="8"></ellipse>
+      </g>
+
+      <path d="M0 96 C 140 66 300 96 460 76 C 620 56 760 82 900 66 C 1030 52 1130 70 1200 58 L 1200 300 L 0 300 Z" fill="#BCD5B0"></path>
+      <path d="M0 128 C 170 106 330 132 500 114 C 670 96 830 122 1000 104 C 1090 94 1150 106 1200 98 L 1200 300 L 0 300 Z" fill="#A8C99B"></path>
+
+      <g>
+        <use href="#arbol-b" transform="translate(40 140) scale(1.05)"></use>
+        <use href="#arbol-a" transform="translate(112 146)"></use>
+        <use href="#arbol-c" transform="translate(176 142) scale(1.1)"></use>
+        <use href="#arbol-b" transform="translate(244 148) scale(0.9)"></use>
+        <use href="#arbol-a" transform="translate(312 144) scale(1.08)"></use>
+        <use href="#arbol-c" transform="translate(372 148)"></use>
+        <use href="#arbol-b" transform="translate(432 146) scale(0.85)"></use>
+        <use href="#arbol-a" transform="translate(936 144)"></use>
+        <use href="#arbol-c" transform="translate(996 148) scale(1.05)"></use>
+        <use href="#arbol-b" transform="translate(1058 142) scale(0.95)"></use>
+        <use href="#arbol-a" transform="translate(1126 146) scale(1.1)"></use>
+        <use href="#arbol-c" transform="translate(1184 148) scale(0.9)"></use>
+      </g>
+
+      <path d="M0 172 C 170 150 340 176 520 160 C 700 144 880 170 1060 154 C 1130 148 1170 154 1200 150 L 1200 300 L 0 300 Z" fill="#84AC73"></path>
+
+      <g>
+        <use href="#arbol-c" transform="translate(742 152) scale(0.9)"></use>
+        <use href="#arbol-b" transform="translate(776 148) scale(0.8)"></use>
+        <use href="#arbol-c" transform="translate(806 152) scale(0.85)"></use>
+      </g>
+
+      <path d="M 744 146 C 762 172 764 190 752 212 C 738 240 716 268 700 300 L 872 300 C 852 268 834 240 828 212 C 820 184 808 166 792 146 Z" fill="url(#agua)"></path>
+      <ellipse cx="768" cy="148" rx="16" ry="4.5" fill="#78BCAF" opacity="0.92"></ellipse>
+      <g stroke="#E6F7F0" stroke-width="1.6" stroke-linecap="round" opacity="0.62">
+        <path d="M 760 176 C 768 192 772 206 768 222"></path>
+        <path d="M 806 184 C 812 200 818 220 822 238"></path>
+        <path d="M 748 226 C 742 248 728 268 714 288"></path>
+        <path d="M 838 246 C 832 264 822 280 812 294"></path>
+      </g>
+      <ellipse cx="784" cy="250" rx="8" ry="2" fill="#F2C978" opacity="0.4"></ellipse>
+      <ellipse cx="738" cy="284" rx="6" ry="1.8" fill="#F2C978" opacity="0.32"></ellipse>
+
+      <path d="M 0 190 C 180 176 360 194 520 186 C 620 182 700 196 752 212 C 738 240 716 268 700 300 L 0 300 Z" fill="url(#orilla-izq)"></path>
+      <path d="M 1200 182 C 1080 170 980 188 900 190 C 860 192 836 200 828 212 C 834 240 852 268 872 300 L 1200 300 Z" fill="url(#orilla-der)"></path>
+      <path d="M 0 248 C 150 234 310 250 460 244 C 580 240 660 262 700 300 L 0 300 Z" fill="url(#orilla-frente)"></path>
+      <path d="M 1200 244 C 1060 232 950 250 860 250 C 856 266 860 284 872 300 L 1200 300 Z" fill="url(#orilla-frente)"></path>
+
+      <g>
+        <use href="#arbol-a" transform="translate(96 276) scale(1.7)"></use>
+        <use href="#arbol-c" transform="translate(190 288) scale(1.25)"></use>
+        <use href="#arbol-a" transform="translate(1104 274) scale(1.6)"></use>
+        <use href="#arbol-b" transform="translate(1016 290) scale(1.1)"></use>
+      </g>
+
+      <g fill="#F2C978" opacity="0.9">
+        <circle cx="268" cy="262" r="2.6"></circle>
+        <circle cx="302" cy="272" r="2"></circle>
+        <circle cx="382" cy="258" r="2.2"></circle>
+        <circle cx="948" cy="268" r="2.4"></circle>
+        <circle cx="982" cy="278" r="1.8"></circle>
+      </g>
+    </svg>
+
+    <footer class="banda">
+      <p class="dato">Buenos Aires · Argentina</p>
+      <p class="lema">El fuego se apaga; el método queda.</p>
+      <p class="dato dato--miel">Desde 2006</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nicolás Gold · Ciencia de Datos e IA</title>
+  <meta name="description" content="Analista Senior IT Operaciones en Acciona IT. Datos, visión por computadora y casi veinte años de oficio. Buenos Aires, Argentina.">
+  <meta name="author" content="Nicolás Gold">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#F0F9F3">
+  <meta name="color-scheme" content="light">
+  <!-- @canonical -->
+  <link rel="me" href="https://www.linkedin.com/in/nicolas-gold-bba795a7">
+  <link rel="icon" href="/assets/sello.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Nicolás Gold">
+  <meta property="og:title" content="Nicolás Gold · Ciencia de Datos e IA">
+  <meta property="og:description" content="Casi veinte años sosteniendo sistemas. Hoy también los leo: datos, visión por computadora y operaciones que no se caen.">
+  <meta property="og:image" content="{{ORIGEN}}/assets/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nicolás Gold: un sello de oro sobre una comarca iluminada por el sol, con colinas, árboles y un río.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nicolás Gold · Ciencia de Datos e IA">
+  <meta name="twitter:description" content="Casi veinte años sosteniendo sistemas. Hoy también los leo: datos, visión por computadora y operaciones que no se caen.">
+  <meta name="twitter:image" content="{{ORIGEN}}/assets/og.png">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="progreso" aria-hidden="true"><span data-progreso></span></div>
+
+  <header class="cabecera" data-cabecera>
+    <div class="envoltura cabecera__interior">
+      <a class="marca" href="#portada" aria-label="Nicolás Gold, ir al inicio">
+        <span class="marca__sello" aria-hidden="true">NG</span>
+        <span class="marca__nombre">Nicolás Gold</span>
+      </a>
+
+      <nav class="nav" aria-label="Secciones del sitio">
+        <ul class="nav__lista">
+          <li><a href="#prefacio">Prefacio</a></li>
+          <li><a href="#sendero">Sendero</a></li>
+          <li><a href="#equipaje">Equipaje</a></li>
+          <li><a href="#pergaminos">Pergaminos</a></li>
+          <li><a href="#senal">Señal</a></li>
+        </ul>
+      </nav>
+
+      <details class="nav-movil" data-nav-movil>
+        <summary class="nav-movil__boton">
+          <span class="nav-movil__lineas" aria-hidden="true"></span>
+          <span>Menú</span>
+        </summary>
+        <nav class="nav-movil__panel" aria-label="Secciones del sitio en móvil">
+          <a href="#prefacio">Prefacio</a>
+          <a href="#sendero">Sendero</a>
+          <a href="#equipaje">Equipaje</a>
+          <a href="#pergaminos">Pergaminos</a>
+          <a href="#senal">Señal</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <section class="portada" id="portada" aria-labelledby="portada-titulo">
+      <div class="comarca" data-comarca aria-hidden="true">
+        <div class="comarca__cielo"></div>
+        <div class="comarca__sol">
+          <span class="comarca__rayos"></span>
+          <span class="comarca__disco"></span>
+        </div>
+        <div class="comarca__nubes">
+          <span class="comarca__nube comarca__nube--a"></span>
+          <span class="comarca__nube comarca__nube--b"></span>
+          <span class="comarca__nube comarca__nube--c"></span>
+        </div>
+
+        <svg class="comarca__paisaje" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" focusable="false" role="presentation">
+          <defs>
+            <linearGradient id="agua-viva" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" class="agua__parada agua__parada--alta"></stop>
+              <stop offset="1" class="agua__parada agua__parada--baja"></stop>
+            </linearGradient>
+
+            <linearGradient id="orilla-izq" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" class="orilla__parada orilla__parada--izq-alta"></stop>
+              <stop offset="0.48" class="orilla__parada orilla__parada--izq-media"></stop>
+              <stop offset="1" class="orilla__parada orilla__parada--izq-baja"></stop>
+            </linearGradient>
+
+            <linearGradient id="orilla-der" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" class="orilla__parada orilla__parada--der-alta"></stop>
+              <stop offset="0.48" class="orilla__parada orilla__parada--der-media"></stop>
+              <stop offset="1" class="orilla__parada orilla__parada--der-baja"></stop>
+            </linearGradient>
+
+            <linearGradient id="orilla-frente" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" class="orilla__parada orilla__parada--frente-alta"></stop>
+              <stop offset="0.18" class="orilla__parada orilla__parada--frente-media"></stop>
+              <stop offset="1" class="orilla__parada orilla__parada--frente-baja"></stop>
+            </linearGradient>
+
+            <g id="bosque-grupo">
+              <ellipse cx="-36" cy="8" rx="30" ry="20"></ellipse>
+              <ellipse cx="0" cy="0" rx="36" ry="26"></ellipse>
+              <ellipse cx="38" cy="8" rx="30" ry="21"></ellipse>
+              <ellipse cx="76" cy="14" rx="26" ry="18"></ellipse>
+              <ellipse cx="6" cy="-20" rx="24" ry="20"></ellipse>
+              <ellipse cx="48" cy="-10" rx="20" ry="17"></ellipse>
+            </g>
+
+            <g id="arbol-bosque-a">
+              <rect class="bosque__tronco" x="-2" y="-42" width="4" height="42"></rect>
+              <circle class="bosque__copa" cx="0" cy="-52" r="29"></circle>
+              <circle class="bosque__copa bosque__copa--luz" cx="-13" cy="-44" r="20"></circle>
+              <circle class="bosque__copa" cx="16" cy="-44" r="22"></circle>
+            </g>
+
+            <g id="arbol-bosque-b">
+              <rect class="bosque__tronco" x="-2.5" y="-60" width="5" height="60"></rect>
+              <circle class="bosque__copa" cx="0" cy="-72" r="24"></circle>
+              <circle class="bosque__copa bosque__copa--luz" cx="-12" cy="-62" r="17"></circle>
+              <circle class="bosque__copa" cx="13" cy="-62" r="19"></circle>
+              <circle class="bosque__copa" cx="2" cy="-86" r="16"></circle>
+            </g>
+
+            <g id="arbol-bosque-c">
+              <rect class="bosque__tronco" x="-1.5" y="-30" width="3" height="30"></rect>
+              <circle class="bosque__copa" cx="0" cy="-38" r="21"></circle>
+              <circle class="bosque__copa bosque__copa--luz" cx="-9" cy="-32" r="15"></circle>
+              <circle class="bosque__copa" cx="11" cy="-32" r="16"></circle>
+            </g>
+          </defs>
+
+          <g class="paisaje__lejos">
+            <path class="colina colina--lejana" d="M0 588 C 130 548 262 582 392 558 C 532 532 618 498 748 510 C 876 522 966 564 1088 546 C 1210 528 1322 492 1440 512 L 1440 900 L 0 900 Z"></path>
+            <path class="colina colina--lejana-2" d="M0 654 C 152 618 302 650 462 626 C 622 602 742 638 882 614 C 1042 586 1182 630 1440 592 L 1440 900 L 0 900 Z"></path>
+            <g class="paisaje__arbolitos">
+              <g transform="translate(268 620)"><rect class="arbolito__tronco" x="-2" y="0" width="4" height="26"></rect><circle class="arbolito__copa" cx="0" cy="-6" r="16"></circle></g>
+              <g transform="translate(322 632)"><rect class="arbolito__tronco" x="-2" y="0" width="4" height="22"></rect><circle class="arbolito__copa" cx="0" cy="-4" r="13"></circle></g>
+              <g transform="translate(1118 606)"><rect class="arbolito__tronco" x="-2" y="0" width="4" height="30"></rect><circle class="arbolito__copa" cx="0" cy="-8" r="18"></circle></g>
+              <g transform="translate(1174 620)"><rect class="arbolito__tronco" x="-2" y="0" width="4" height="24"></rect><circle class="arbolito__copa" cx="0" cy="-5" r="14"></circle></g>
+              <g transform="translate(906 640)"><rect class="arbolito__tronco" x="-2" y="0" width="4" height="18"></rect><circle class="arbolito__copa" cx="0" cy="-3" r="10"></circle></g>
+            </g>
+          </g>
+
+          <g class="paisaje__bosque">
+            <g class="bosque__lejos">
+              <use href="#bosque-grupo" transform="translate(20 672) scale(1.1 0.95)"></use>
+              <use href="#bosque-grupo" transform="translate(210 678) scale(0.9 1.05)"></use>
+              <use href="#bosque-grupo" transform="translate(400 668) scale(1.15 0.9)"></use>
+              <use href="#bosque-grupo" transform="translate(590 676) scale(0.95 1.1)"></use>
+              <use href="#bosque-grupo" transform="translate(780 670) scale(1.05 0.95)"></use>
+              <use href="#bosque-grupo" transform="translate(970 678) scale(0.9 1.05)"></use>
+              <use href="#bosque-grupo" transform="translate(1160 668) scale(1.12 0.92)"></use>
+              <use href="#bosque-grupo" transform="translate(1350 674) scale(1 1.08)"></use>
+            </g>
+          </g>
+
+          <g class="paisaje__arboles-fondo">
+            <use href="#arbol-bosque-a" transform="translate(80 748) scale(0.9)"></use>
+            <use href="#arbol-bosque-b" transform="translate(152 760)"></use>
+            <use href="#arbol-bosque-c" transform="translate(218 742) scale(0.95)"></use>
+            <use href="#arbol-bosque-a" transform="translate(300 752) scale(1.1)"></use>
+            <use href="#arbol-bosque-b" transform="translate(392 758) scale(0.85)"></use>
+            <use href="#arbol-bosque-c" transform="translate(472 746) scale(1.05)"></use>
+            <use href="#arbol-bosque-a" transform="translate(560 754) scale(0.95)"></use>
+            <use href="#arbol-bosque-b" transform="translate(652 762) scale(0.8)"></use>
+            <use href="#arbol-bosque-a" transform="translate(970 754)"></use>
+            <use href="#arbol-bosque-c" transform="translate(1042 744) scale(1.1)"></use>
+            <use href="#arbol-bosque-b" transform="translate(1122 758) scale(0.9)"></use>
+            <use href="#arbol-bosque-a" transform="translate(1202 750) scale(1.15)"></use>
+            <use href="#arbol-bosque-c" transform="translate(1272 744) scale(0.95)"></use>
+            <use href="#arbol-bosque-b" transform="translate(1352 756) scale(1.05)"></use>
+          </g>
+
+          <g class="paisaje__medio">
+            <path class="colina colina--media" d="M0 724 C 180 688 360 722 540 702 C 720 682 900 712 1080 692 C 1240 674 1360 702 1440 684 L 1440 900 L 0 900 Z"></path>
+          </g>
+
+          <g class="paisaje__arboles">
+            <use href="#arbol-bosque-a" transform="translate(250 736) scale(1.25)"></use>
+            <use href="#arbol-bosque-b" transform="translate(708 728) scale(0.9)"></use>
+            <use href="#arbol-bosque-a" transform="translate(1138 732) scale(1.1)"></use>
+          </g>
+
+          <g class="paisaje__rio">
+            <path class="rio__cauce" fill="url(#agua-viva)" d="M 806 556 C 822 606 862 636 840 678 C 812 730 912 752 894 802 C 874 856 790 866 742 900 L 1076 900 C 1042 852 1030 806 992 766 C 954 726 1028 700 996 660 C 970 628 930 596 834 556 Z"></path>
+            <ellipse class="rio__manantial" cx="820" cy="556" rx="22" ry="7"></ellipse>
+            <ellipse class="rio__destello" cx="826" cy="574" rx="10" ry="2.6"></ellipse>
+            <ellipse class="rio__destello" cx="858" cy="626" rx="7" ry="2"></ellipse>
+            <g class="rio__hilos">
+              <path class="rio__hilo rio__hilo--a" pathLength="1" d="M 820 562 C 838 610 870 640 852 680 C 828 730 930 760 910 806 C 892 848 850 872 820 896"></path>
+              <path class="rio__hilo rio__hilo--b" pathLength="1" d="M 812 560 C 830 612 854 642 836 682 C 812 732 906 758 884 808 C 868 846 826 866 796 894"></path>
+              <path class="rio__hilo rio__hilo--c" pathLength="1" d="M 830 564 C 848 612 880 640 862 682 C 840 730 946 764 924 810 C 906 850 872 874 852 898"></path>
+              <path class="rio__hilo rio__hilo--d" pathLength="1" d="M 816 574 C 830 608 846 630 838 656"></path>
+            </g>
+          </g>
+
+          <g class="paisaje__orilla">
+            <path class="orilla orilla--izq" d="M0 806 C 140 776 300 798 430 792 C 540 788 620 802 700 818 C 690 846 678 872 664 900 L 0 900 Z"></path>
+            <path class="orilla orilla--der" d="M1440 788 C 1310 766 1180 794 1080 796 C 1030 798 1000 806 980 818 C 986 846 1002 872 1016 900 L 1440 900 Z"></path>
+            <path class="orilla orilla--frente" d="M0 812 C 170 800 330 816 500 808 C 620 802 690 810 730 826 C 770 842 820 844 860 832 C 920 814 1040 810 1160 804 C 1280 798 1370 806 1440 800 L 1440 900 L 0 900 Z"></path>
+            <g class="paisaje__flores">
+              <circle cx="210" cy="880" r="3"></circle>
+              <circle cx="256" cy="892" r="2.2"></circle>
+              <circle cx="352" cy="884" r="2.6"></circle>
+              <circle cx="1112" cy="878" r="3"></circle>
+              <circle cx="1180" cy="890" r="2.2"></circle>
+              <circle cx="1264" cy="882" r="2.6"></circle>
+            </g>
+          </g>
+        </svg>
+
+        <svg class="comarca__arbol comarca__arbol--izq" viewBox="0 0 340 520" focusable="false" role="presentation">
+          <path class="arbol__tronco" d="M164 520 C 166 458 164 414 154 362 L 166 354 C 178 402 182 458 184 520 Z"></path>
+          <path class="arbol__rama" d="M166 408 C 148 388 132 378 112 368 M170 378 C 190 356 208 348 228 342"></path>
+          <g class="arbol__copa arbol__copa--a">
+            <path class="copa copa--fondo" d="M168 368 C 96 380 44 332 54 272 C 12 216 52 144 116 136 C 138 72 236 62 272 120 C 330 130 356 200 320 250 C 354 312 300 376 230 368 Z"></path>
+            <path class="copa copa--luz" d="M132 178 C 156 126 222 112 262 144 C 292 168 296 208 272 236 C 244 268 186 266 156 236 C 138 218 126 198 132 178 Z"></path>
+            <g class="copa__motas">
+              <circle cx="102" cy="204" r="7"></circle>
+              <circle cx="288" cy="196" r="6"></circle>
+              <circle cx="184" cy="104" r="5"></circle>
+              <circle cx="242" cy="306" r="6"></circle>
+              <circle cx="102" cy="306" r="5"></circle>
+            </g>
+          </g>
+        </svg>
+
+        <svg class="comarca__arbol comarca__arbol--der" viewBox="0 0 380 540" focusable="false" role="presentation">
+          <path class="arbol__tronco" d="M184 540 C 190 468 188 418 176 360 L 194 352 C 208 412 212 468 216 540 Z"></path>
+          <path class="arbol__rama" d="M188 420 C 164 396 144 386 120 374 M192 388 C 218 362 240 352 264 346"></path>
+          <g class="arbol__copa arbol__copa--a">
+            <path class="copa copa--fondo" d="M190 372 C 104 388 44 336 56 268 C 8 204 56 122 132 116 C 156 44 276 38 314 108 C 372 122 392 198 354 250 C 392 318 326 386 244 374 Z"></path>
+            <path class="copa copa--medio" d="M128 218 C 146 156 216 134 268 166 C 306 190 316 234 292 268 C 266 306 198 312 158 282 C 134 264 120 240 128 218 Z"></path>
+            <g class="copa__motas">
+              <circle cx="96" cy="178" r="8"></circle>
+              <circle cx="322" cy="180" r="7"></circle>
+              <circle cx="196" cy="82" r="6"></circle>
+              <circle cx="274" cy="318" r="7"></circle>
+              <circle cx="112" cy="310" r="6"></circle>
+            </g>
+          </g>
+        </svg>
+
+        <canvas id="brisa" class="brisa" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="envoltura portada__interior">
+        <p class="portada__lugar dato">Buenos Aires · Argentina</p>
+
+        <div class="portada__sello" aria-hidden="true">
+          <svg class="sello-hero" viewBox="0 0 280 280" focusable="false">
+            <defs>
+              <path id="aro-portada" d="M 36 140 A 104 104 0 0 1 244 140" fill="none" />
+            </defs>
+            <circle class="sello-hero__aro" cx="140" cy="140" r="132" />
+            <circle class="sello-hero__aro sello-hero__aro--fino" cx="140" cy="140" r="120" />
+            <text class="sello-hero__leyenda">
+              <textPath href="#aro-portada" startOffset="50%" text-anchor="middle">BUENOS AIRES · CIENCIA DE DATOS · OPERACIONES</textPath>
+            </text>
+            <text class="sello-hero__iniciales" x="140" y="142" text-anchor="middle" dominant-baseline="central">NG</text>
+            <path class="sello-hero__chispa" d="M140 232 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4 Z" />
+          </svg>
+        </div>
+
+        <h1 class="portada__titulo" id="portada-titulo">Nicolás Gold</h1>
+        <p class="portada__rol">Ciencia de Datos e Inteligencia Artificial <span aria-hidden="true">·</span> Operaciones IT</p>
+        <p class="portada__lede">Casi veinte años sosteniendo sistemas críticos. Hoy también los leo: los mido, los modelo y los convierto en decisiones que se pueden auditar.</p>
+        <p class="portada__epigrafe">Toda luz empieza siendo una chispa que alguien se anima a mirar.</p>
+
+        <div class="portada__acciones">
+          <a class="boton boton--hoja" href="#pergaminos">Ver los pergaminos</a>
+          <a class="boton boton--filete" href="#prefacio">Seguir el sendero</a>
+        </div>
+
+        <button class="brisa-ayuda" type="button" data-chispa hidden>
+          <span class="brisa-ayuda__icono" aria-hidden="true">✦</span>
+          Tocá la pradera · levantá las hojas
+        </button>
+      </div>
+
+      <div class="envoltura portada__pie">
+        <p class="dato">34°36′S · 58°23′O</p>
+        <a class="portada__bajar" href="#prefacio" aria-label="Bajar al prefacio"><span aria-hidden="true"></span>Bajá</a>
+        <p class="dato">Desde 2006</p>
+      </div>
+    </section>
+
+    <section class="seccion prefacio" id="prefacio" aria-labelledby="prefacio-titulo">
+      <div class="envoltura">
+        <header class="seccion__cabecera">
+          <p class="kicker"><span class="kicker__num" aria-hidden="true">I</span> Prefacio</p>
+          <h2 id="prefacio-titulo">El oficio de mirar dos veces</h2>
+          <p class="lede">No creo en las cajas negras. Creo en las preguntas bien hechas, en los datos con procedencia y en las decisiones que se pueden explicar.</p>
+        </header>
+
+        <div class="prefacio__grilla">
+          <div class="prosa" data-reveal>
+            <p>Soy Nicolás Gold. Empecé en el soporte, pasé por la guardia de sistemas y hoy cuido la disponibilidad de aplicaciones críticas en Acciona IT. En el camino entendí que operar y analizar no son dos carreras: son dos formas de la misma pregunta —qué está pasando y qué conviene hacer.</p>
+            <p>Estoy cerrando la Tecnicatura Superior en Ciencia de Datos e IA en el IFTS N°18. Me interesa la visión por computadora clásica, la morfometría y todo lo que se pueda medir sin esconder el método. El resto —Power BI, modelos, pipelines— es oficio: preparar, probar, descartar y volver a mirar.</p>
+            <p class="prosa__firma">Nicolás Gold <span>Buenos Aires</span></p>
+          </div>
+
+          <aside class="ficha" aria-label="Ficha breve de Nicolás Gold" data-reveal>
+            <div class="ficha__sello" aria-hidden="true">NG</div>
+            <dl class="ficha__datos">
+              <div>
+                <dt>Oficio</dt>
+                <dd>19 años 10 meses <span class="ficha__nota">desde 2006</span></dd>
+              </div>
+              <div>
+                <dt>Ahora</dt>
+                <dd>Acciona IT <span class="ficha__nota">Analista Senior IT Operaciones</span></dd>
+              </div>
+              <div>
+                <dt>Estudio</dt>
+                <dd>IFTS N°18 <span class="ficha__nota">Ciencia de Datos e IA · en curso</span></dd>
+              </div>
+              <div>
+                <dt>Base</dt>
+                <dd>Buenos Aires <span class="ficha__nota">Argentina</span></dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="oficios" aria-label="Qué hago">
+          <article class="oficio" data-reveal>
+            <span class="oficio__marca dato">I</span>
+            <h3>Sostener</h3>
+            <p>Disponibilidad, monitoreo e incidentes de aplicaciones críticas. CI/CD, release y continuidad.</p>
+          </article>
+          <article class="oficio" data-reveal>
+            <span class="oficio__marca dato">II</span>
+            <h3>Medir</h3>
+            <p>Preparación de datos, feature engineering, modelos y tableros Power BI con KPIs que se pueden rastrear.</p>
+          </article>
+          <article class="oficio" data-reveal>
+            <span class="oficio__marca dato">III</span>
+            <h3>Mirar</h3>
+            <p>Visión clásica, segmentación y morfometría. Máscaras y métricas que no esconden el método.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion sendero" id="sendero" aria-labelledby="sendero-titulo">
+      <div class="envoltura">
+        <header class="seccion__cabecera">
+          <p class="kicker"><span class="kicker__num" aria-hidden="true">II</span> El Sendero</p>
+          <h2 id="sendero-titulo"><span class="sr-only">Trayectoria profesional: </span>Cinco postas, la misma guardia</h2>
+          <p class="lede">No hay atajos en la operación. Hay turnos, personas y sistemas que no pueden caerse.</p>
+        </header>
+
+        <ol class="sendero__lista">
+          <li class="posta" data-reveal>
+            <p class="posta__cuando dato"><span>2006</span><span aria-hidden="true">—</span><span>2009</span></p>
+            <div class="posta__marca" aria-hidden="true"><span class="posta__punto"></span></div>
+            <div class="posta__relato">
+              <p class="posta__lugar">Farmacity</p>
+              <h3 class="posta__rol">Soporte de sistemas</h3>
+              <p class="posta__texto">Las primeras guardias: usuarios, urgencias y la costumbre de resolver.</p>
+            </div>
+          </li>
+          <li class="posta" data-reveal>
+            <p class="posta__cuando dato"><span>2009</span><span aria-hidden="true">—</span><span>2015</span></p>
+            <div class="posta__marca" aria-hidden="true"><span class="posta__punto"></span></div>
+            <div class="posta__relato">
+              <p class="posta__lugar">Lightech</p>
+              <h3 class="posta__rol">Operador de Sistema</h3>
+              <p class="posta__texto">Turnos de operación y monitoreo. Aprendí que la calma también es una herramienta.</p>
+            </div>
+          </li>
+          <li class="posta" data-reveal>
+            <p class="posta__cuando dato"><span>2015</span><span aria-hidden="true">—</span><span>2021</span></p>
+            <div class="posta__marca" aria-hidden="true"><span class="posta__punto"></span></div>
+            <div class="posta__relato">
+              <p class="posta__lugar">Stefanini</p>
+              <h3 class="posta__rol">Analista de Infraestructura TI</h3>
+              <p class="posta__texto">Servidores, soporte y continuidad. La infraestructura como oficio invisible.</p>
+            </div>
+          </li>
+          <li class="posta" data-reveal>
+            <p class="posta__cuando dato"><span>2021</span><span aria-hidden="true">—</span><span>2023</span></p>
+            <div class="posta__marca" aria-hidden="true"><span class="posta__punto"></span></div>
+            <div class="posta__relato">
+              <p class="posta__lugar">Acciona IT</p>
+              <h3 class="posta__rol">Analista Funcional Sr</h3>
+              <p class="posta__texto">Diseño de servicio y coordinación de equipos de administración: VMware, Windows Server y Unix.</p>
+            </div>
+          </li>
+          <li class="posta posta--actual" data-reveal>
+            <p class="posta__cuando dato"><span>2023</span><span aria-hidden="true">—</span><span>hoy</span></p>
+            <div class="posta__marca" aria-hidden="true"><span class="posta__punto"></span></div>
+            <div class="posta__relato">
+              <p class="posta__lugar">Acciona IT <span class="chip chip--curso"><span class="chip__punto" aria-hidden="true"></span>En curso</span></p>
+              <h3 class="posta__rol">Analista Senior IT Operaciones</h3>
+              <p class="posta__texto">Disponibilidad de aplicaciones críticas, CI/CD y soluciones de datos. El presente, todavía en curso.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="sendero__nota dato">19 años y 10 meses de recorrido, desde la primera guardia.</p>
+
+        <div class="formacion" data-reveal>
+          <h3 class="formacion__titulo">Formación</h3>
+          <ul class="formacion__lista">
+            <li>
+              <span class="dato">2024 — 2026</span>
+              <div>
+                <p class="formacion__casa">IFTS N°18</p>
+                <p class="formacion__carrera">Tecnicatura Superior en Ciencia de Datos e IA <span class="chip chip--curso"><span class="chip__punto" aria-hidden="true"></span>En curso</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="dato">2012 — 2014</span>
+              <div>
+                <p class="formacion__casa">Instituto Raúl Scalabrini Ortiz</p>
+                <p class="formacion__carrera">Analista de Sistemas</p>
+              </div>
+            </li>
+            <li>
+              <span class="dato" aria-hidden="true">—</span>
+              <div>
+                <p class="formacion__casa">Instituto Septimio Walsh</p>
+                <p class="formacion__carrera">Profesorado de Informática</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion equipaje" id="equipaje" aria-labelledby="equipaje-titulo">
+      <div class="envoltura">
+        <header class="seccion__cabecera seccion__cabecera--tinta">
+          <p class="kicker kicker--tinta"><span class="kicker__num" aria-hidden="true">III</span> El Equipaje</p>
+          <h2 id="equipaje-titulo">Lo que llevo en la mochila</h2>
+          <p class="lede">No es un inventario de logos. Es lo que sé usar cuando el problema aprieta.</p>
+        </header>
+
+        <div class="equipaje__grilla">
+          <article class="carga" data-reveal>
+            <p class="carga__rotulo dato">01 · Datos</p>
+            <ul>
+              <li>Python</li>
+              <li>pandas</li>
+              <li>NumPy</li>
+              <li>OpenCV</li>
+              <li>Power BI</li>
+              <li>Modelado de datos</li>
+              <li>Feature engineering</li>
+              <li>Evaluación de modelos</li>
+            </ul>
+          </article>
+          <article class="carga" data-reveal>
+            <p class="carga__rotulo dato">02 · Operaciones</p>
+            <ul>
+              <li>VMware</li>
+              <li>Windows Server</li>
+              <li>Unix (RedHat, CentOS, SUSE)</li>
+              <li>CI/CD</li>
+              <li>Monitoreo</li>
+              <li>Gestión de incidentes</li>
+              <li>Continuidad</li>
+            </ul>
+          </article>
+          <article class="carga" data-reveal>
+            <p class="carga__rotulo dato">03 · Oficio</p>
+            <ul>
+              <li>Relevamiento funcional</li>
+              <li>Documentación técnica</li>
+              <li>Coordinación de equipos</li>
+              <li>Mejora continua</li>
+              <li>Inglés</li>
+            </ul>
+          </article>
+          <article class="carga" data-reveal>
+            <p class="carga__rotulo dato">04 · En el taller</p>
+            <ul>
+              <li>Visión clásica</li>
+              <li>Segmentación</li>
+              <li>Morfometría</li>
+              <li>Color y textura</li>
+            </ul>
+          </article>
+        </div>
+
+        <blockquote class="cita" data-reveal>
+          <p>Prefiero una medición incómoda a una cifra elegante.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="seccion pergaminos" id="pergaminos" aria-labelledby="pergaminos-titulo">
+      <div class="envoltura">
+        <header class="seccion__cabecera">
+          <p class="kicker"><span class="kicker__num" aria-hidden="true">IV</span> Los Pergaminos</p>
+          <h2 id="pergaminos-titulo">Lo que salió del taller</h2>
+          <p class="lede">Proyectos con una pregunta adentro. Cada uno se puede abrir, recorrer y auditar.</p>
+        </header>
+
+        <div class="pergaminos__grilla">
+          <!-- @pergaminos -->
+        </div>
+
+        <p class="pergaminos__nota">El fuego se apaga; el método queda. <a href="#senal">¿Tenés una pregunta?</a></p>
+      </div>
+    </section>
+
+    <section class="seccion senal" id="senal" aria-labelledby="senal-titulo">
+      <div class="envoltura senal__grilla">
+        <div class="senal__texto" data-reveal>
+          <p class="kicker"><span class="kicker__num" aria-hidden="true">V</span> La Señal</p>
+          <h2 id="senal-titulo">Si algo de acá te sirve, escribí.</h2>
+          <p class="lede">Estoy abierto a conversar sobre datos, operaciones, visión por computadora o cualquier problema que merezca ser mirado dos veces.</p>
+          <p class="senal__nota dato">Sin formularios. Sin intermediarios. Respondo personalmente.</p>
+        </div>
+
+        <div class="carta" data-reveal>
+          <div class="carta__sello" aria-hidden="true">NG</div>
+          <p class="carta__rotulo dato">Para: quien esté del otro lado</p>
+          <p class="carta__de">De: Nicolás Gold</p>
+          <a class="carta__mail" href="mailto:nagold86@gmail.com">nagold86@gmail.com</a>
+          <button class="boton boton--tinta" type="button" data-copiar hidden>Copiar dirección</button>
+          <p class="carta__estado" data-copiado aria-live="polite"></p>
+          <hr class="carta__linea">
+          <a class="carta__linkedin" href="https://www.linkedin.com/in/nicolas-gold-bba795a7" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+          <p class="carta__pie dato">Buenos Aires · 34°36′S 58°23′O</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="envoltura pie__interior">
+      <p>© <!-- @anio --> Nicolás Gold · Buenos Aires</p>
+      <p class="pie__lema">El fuego se apaga; el método queda.</p>
+      <a class="pie__arriba" href="#portada">Volver arriba <span aria-hidden="true">↑</span></a>
+    </div>
+    <p class="pie__tecnica dato">HTML · CSS · un canvas · ninguna caja negra</p>
+    <noscript><p class="pie__noscript">La brisa necesita JavaScript. El libro se lee igual.</p></noscript>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

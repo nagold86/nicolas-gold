@@ -1,0 +1,9 @@
+dist/
+node_modules/
+.vercel/
+.qa/
+.vercel-tmp/
+og-prueba.png
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,20 @@
+{
+  "name": "nicolas-gold",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing personal de Nicolás Gold — Comarca de Luz",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node tools/forge.mjs",
+    "dev": "node tools/forge.mjs && node tools/serve.mjs",
+    "preview": "node tools/forge.mjs && node tools/serve.mjs",
+    "check": "node --check tools/forge.mjs && node --check tools/serve.mjs && node --check tools/check-links.mjs && node --check tools/audit.mjs && node --check tools/og.mjs && node --check tools/contraste.mjs && node --check src/js/main.js && node --check src/js/comarca.js",
+    "links": "node tools/check-links.mjs",
+    "audit": "node tools/audit.mjs",
+    "og": "node tools/og.mjs",
+    "contraste": "node tools/contraste.mjs"
+  }
+}

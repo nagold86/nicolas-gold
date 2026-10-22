@@ -1,0 +1,122 @@
+# Registro legible por máquina de la Comunidad.
+# Fuente de verdad del contrato: fellowship/PIPELINE.md
+version: 1
+project: fellowship
+domain: analisis de hojas de tabaco
+constraint: vision clasica unicamente (OpenCV, scikit-image, NumPy, SciPy, pandas)
+contract: fellowship/PIPELINE.md
+sequence: [frodo, sam, legolas, gimli, merry, boromir, aragorn]
+veto_holder: boromir
+appeal_holder: gandalf
+design_owner: celebrimbor
+
+agents:
+  - name: gandalf
+    file: .qoder/agents/gandalf.md
+    character: Gandalf el Gris
+    people: Maia / Istari
+    stage: consejo
+    consumes: [objetivo agronomico, docs/DECISIONES.md, estado del dataset]
+    produces: [docs/DECISIONES.md]
+    gate: decision con criterio de falsacion declarado
+    shadow: desaparecer ante la decision incomoda
+    tools: [Read, Grep, Glob, WebSearch, WebFetch, Write]
+
+  - name: aragorn
+    file: .qoder/agents/aragorn.md
+    character: Aragorn hijo de Arathorn
+    people: Dunedain
+    stage: orquestacion
+    consumes: [core/preprocess.py, core/segmentation.py, core/morphometry.py, core/descriptors.py, core/quality.py]
+    produces: [core/orchestrator.py, core/pipeline.py, app/main.py, app/schemas.py, app/routers/inspections.py]
+    gate: corrida reproducible con un comando y dependencias inyectadas
+    shadow: dudar y no decidir
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: frodo
+    file: .qoder/agents/frodo.md
+    character: Frodo Baggins
+    people: Hobbit
+    stage: ingesta
+    consumes: [imgs/]
+    produces: [data/manifest.jsonl, data/duplicados.json, app/uploads.py, app/repository.py]
+    gate: 100 por ciento de archivos con hash, hoja base y estado
+    shadow: apego al dato sucio
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: sam
+    file: .qoder/agents/sam.md
+    character: Samwise Gamgee
+    people: Hobbit
+    stage: preproceso
+    consumes: [data/manifest.jsonl, imgs/]
+    produces: [core/preprocess.py]
+    gate: conservacion de contraste, entropia y borde dentro de tolerancia
+    shadow: limpiar de mas y borrar senal
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: legolas
+    file: .qoder/agents/legolas.md
+    character: Legolas Greenleaf
+    people: Elfo
+    stage: segmentacion
+    consumes: [core/preprocess.py]
+    produces: [core/segmentation.py]
+    gate: IoU de lesion medio y peor caso por encima del umbral del ADR
+    shadow: ajuste manual por imagen
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: gimli
+    file: .qoder/agents/gimli.md
+    character: Gimli hijo de Gloin
+    people: Enano
+    stage: morfometria
+    consumes: [core/segmentation.py]
+    produces: [core/morphometry.py]
+    gate: unidades declaradas y error propagado
+    shadow: medir sin calibrar
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: merry
+    file: .qoder/agents/merry.md
+    character: Meriadoc Brandybuck
+    people: Hobbit
+    stage: color_textura
+    consumes: [core/preprocess.py, core/segmentation.py]
+    produces: [core/descriptors.py]
+    gate: espacio de color declarado y ablacion minima por descriptor
+    shadow: rasgos sin hipotesis
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: pippin
+    file: .qoder/agents/pippin.md
+    character: Peregrin Took
+    people: Hobbit
+    stage: exploracion
+    consumes: [copia de cualquier artefacto]
+    produces: [sandbox/**]
+    gate: hallazgo reproducible con semilla y script
+    shadow: contaminar produccion
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: boromir
+    file: .qoder/agents/boromir.md
+    character: Boromir hijo de Denethor
+    people: Hombre de Gondor
+    stage: validacion
+    consumes: [core/, tests/golden/, data/manifest.jsonl]
+    produces: [core/quality.py, tests/test_contract.py, tests/test_architecture.py, docs/VALIDACION.md]
+    gate: veredicto APTO o NO APTO por lote
+    shadow: rendirse a la metrica facil
+    tools: [Read, Write, Edit, Glob, Grep, Bash]
+
+  - name: celebrimbor
+    file: .qoder/agents/celebrimbor.md
+    character: Celebrimbor, senor de Eregion
+    people: Elfo Noldor (aliado, fuera de los Nueve)
+    stage: diseno_visual
+    consumes: [app/schemas.py, docs/DESIGN.md, resultados del pipeline]
+    produces: [docs/DESIGN.md, frontend/tokens.css, frontend/styles.css, frontend/index.html, core/render.py]
+    gate: contraste AA, foco visible y estados vacio, error y resultado
+    shadow: ornamento sin legibilidad
+    tools: [Read, Write, Edit, Glob, Grep]

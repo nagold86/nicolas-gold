@@ -1,0 +1,180 @@
+/* ============================================================
+   Comarca de Luz · tokens
+   Única fuente de color, tipografía, espacio y movimiento.
+   Ningún valor literal de diseño vive fuera de este archivo.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* ----------------------------------------------------------
+     Color · cielo y luz
+     ---------------------------------------------------------- */
+  --cielo-alto: #F0F9F3;
+  --cielo: #DCEFE3;
+  --cielo-bajo: #C9E3D5;
+  --bruma: #F6FAF2;
+  --sol: #F2BE58;
+  --sol-claro: #FBE2A0;
+  --resplandor-sol: rgba(242, 190, 88, 0.5);
+
+  /* ----------------------------------------------------------
+     Color · papel y pradera
+     ---------------------------------------------------------- */
+  --papel: #FBF5E5;
+  --papel-alto: #FFFBEF;
+  --papel-hondo: #F3E8D1;
+  --papel-sombra: #E4D4B3;
+  --pradera: #E9F1DB;
+  --crema: #FAF3DE;
+  --crema-tenue: #E7DFC8;
+
+  /* ----------------------------------------------------------
+     Color · tinta
+     ---------------------------------------------------------- */
+  --tinta: #1E2F22;
+  --tinta-suave: #45553F;
+  --tinta-tenue: #5E6C57;
+  --piedra: #8A9182;
+
+  /* ----------------------------------------------------------
+     Color · bosque, hoja y tronco
+     ---------------------------------------------------------- */
+  --bosque: #21382A;
+  --bosque-alto: #2E4A35;
+  --bosque-bajo: #16261C;
+  --hoja: #5B8A43;
+  --hoja-oscura: #3D6732;
+  --hoja-clara: #8FB56A;
+  --hoja-suave: #C9DDB0;
+  --tronco: #5C4631;
+  --tronco-claro: #7E6444;
+
+  /* Colinas del paisaje */
+  --colina-lejos: #BCD5B0;
+  --colina-lejos-2: #A8C99B;
+  --colina-medio: #84AC73;
+  --colina-cerca: #5F8C4D;
+  --colina-sombra: #487241;
+
+  /* ----------------------------------------------------------
+     Color · río
+     ---------------------------------------------------------- */
+  --rio: #2F7F77;
+  --rio-claro: #78BCAF;
+  --rio-hondo: #235F5A;
+  --rio-brillo: #E6F7F0;
+
+  /* ----------------------------------------------------------
+     Color · miel y lesión
+     ---------------------------------------------------------- */
+  --miel: #D9A03C;
+  --miel-claro: #F2C978;
+  --miel-hondo: #7A5314;
+  --terracota: #B9613C;
+  --terracota-hondo: #96482B;
+
+  /* ----------------------------------------------------------
+     Superficies, filetes y velos derivados
+     ---------------------------------------------------------- */
+  --filete: rgba(30, 47, 34, 0.14);
+  --filete-fuerte: rgba(30, 47, 34, 0.3);
+  --filete-claro: rgba(250, 243, 222, 0.2);
+  --filete-claro-fuerte: rgba(250, 243, 222, 0.38);
+  --filete-miel: rgba(217, 160, 60, 0.45);
+  --filete-miel-fuerte: rgba(217, 160, 60, 0.85);
+  --filete-rio: rgba(63, 139, 132, 0.35);
+  --velo-cabecera: rgba(240, 249, 243, 0.84);
+  --velo-papel: rgba(255, 251, 239, 0.94);
+
+  --grad-papel: linear-gradient(180deg, var(--papel-alto) 0%, var(--papel) 100%);
+  --grad-pradera: linear-gradient(180deg, var(--pradera) 0%, var(--papel) 100%);
+  --grad-equipaje: linear-gradient(180deg, var(--papel-hondo) 0%, var(--papel) 42%, var(--papel) 100%);
+  --grad-bosque: radial-gradient(100% 80% at 16% 0%, var(--bosque-alto) 0%, transparent 62%), linear-gradient(180deg, var(--bosque) 0%, var(--bosque-bajo) 100%);
+  --grad-pie: linear-gradient(180deg, var(--bosque) 0%, var(--bosque-bajo) 100%);
+  --grad-senal: radial-gradient(92% 120% at 6% 0%, var(--cielo-bajo) 0%, transparent 62%), linear-gradient(180deg, var(--cielo) 0%, var(--pradera) 56%, var(--papel) 100%);
+  --velo-portada: radial-gradient(ellipse 70% 62% at 50% 46%, rgba(255, 251, 239, 0.82) 0%, rgba(255, 251, 239, 0.48) 54%, rgba(255, 251, 239, 0) 78%);
+  --velo-portada-movil: radial-gradient(ellipse 96% 80% at 50% 46%, rgba(255, 251, 239, 0.9) 0%, rgba(255, 251, 239, 0.6) 58%, rgba(255, 251, 239, 0) 84%);
+  --velo-pie: linear-gradient(180deg, rgba(22, 38, 28, 0) 0%, rgba(22, 38, 28, 0.3) 58%, rgba(22, 38, 28, 0.62) 100%);
+
+  /* ----------------------------------------------------------
+     Sombras
+     ---------------------------------------------------------- */
+  --sombra-1: 0 2px 6px rgba(22, 38, 28, 0.06), 0 14px 34px rgba(22, 38, 28, 0.09);
+  --sombra-2: 0 4px 10px rgba(22, 38, 28, 0.08), 0 26px 56px rgba(22, 38, 28, 0.16);
+  --sombra-sello: 0 3px 10px rgba(22, 38, 28, 0.22), inset 0 1px 0 rgba(255, 251, 239, 0.5);
+  --sombra-texto: 0 1px 4px rgba(22, 38, 28, 0.5);
+  --sombra-copa: drop-shadow(0 12px 22px rgba(22, 38, 28, 0.12));
+
+  /* ----------------------------------------------------------
+     Tipografía
+     ---------------------------------------------------------- */
+  --fuente-titulo: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
+  --fuente-cuerpo: "EB Garamond", Georgia, "Times New Roman", serif;
+  --fuente-dato: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+
+  --t-12: clamp(0.72rem, 0.69rem + 0.12vw, 0.78rem);
+  --t-14: clamp(0.82rem, 0.78rem + 0.16vw, 0.9rem);
+  --t-16: 1rem;
+  --t-19: clamp(1.08rem, 1.02rem + 0.26vw, 1.2rem);
+  --t-24: clamp(1.32rem, 1.18rem + 0.55vw, 1.55rem);
+  --t-32: clamp(1.62rem, 1.4rem + 0.9vw, 2.05rem);
+  --t-44: clamp(2.05rem, 1.62rem + 1.8vw, 2.85rem);
+  --t-64: clamp(2.55rem, 1.7rem + 3.6vw, 4.1rem);
+  --t-96: clamp(3.3rem, 1.7rem + 6.4vw, 6.4rem);
+
+  --interlinea: 1.65;
+  --interlinea-titulo: 1.08;
+  --medida: 62ch;
+
+  /* ----------------------------------------------------------
+     Espacio y forma
+     ---------------------------------------------------------- */
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+  --e-8: 4rem;
+  --e-9: 6rem;
+  --e-10: 8rem;
+
+  --radio-1: 3px;
+  --radio-2: 10px;
+  --radio-3: 18px;
+  --radio-redondo: 999px;
+
+  --ancho: 1180px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --alto-cabecera: 4.5rem;
+
+  /* ----------------------------------------------------------
+     Movimiento
+     ---------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-suave: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-micro: 180ms;
+  --t-panel: 320ms;
+  --t-reveal: 620ms;
+  --t-corriente: 14s;
+  --t-mecer: 9s;
+  --t-girar: 180s;
+
+  /* ----------------------------------------------------------
+     Capas
+     ---------------------------------------------------------- */
+  --z-escena: 0;
+  --z-brisa: 1;
+  --z-contenido: 2;
+  --z-cabecera: 50;
+  --z-menu: 60;
+  --z-salto: 100;
+
+  /* ----------------------------------------------------------
+     Foco
+     ---------------------------------------------------------- */
+  --foco: #2C6B66;
+  --foco-claro: #F2C978;
+}

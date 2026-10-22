@@ -1,0 +1,10 @@
+.qoder/
+fellowship/
+docs/
+dist/
+.qa/
+tools/og.html
+og-prueba.png
+*.md
+.DS_Store
+Thumbs.db

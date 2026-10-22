@@ -1,0 +1,11 @@
+<svg class="sello-arte" viewBox="0 0 240 240" role="presentation" focusable="false">
+  <circle class="sello-arte__aro sello-arte__aro--fino" cx="120" cy="120" r="110" />
+  <circle class="sello-arte__aro" cx="120" cy="120" r="96" />
+  <circle class="sello-arte__aro sello-arte__aro--punteado" cx="120" cy="120" r="78" />
+  <path class="sello-arte__chispa" d="M120 18 l3.5 10.5 L134 32 l-10.5 3.5 L120 46 l-3.5-10.5 L106 32 l10.5-3.5 Z" />
+  <text class="sello-arte__glifo" x="120" y="124" text-anchor="middle" dominant-baseline="central">{{GLIFO}}</text>
+  <circle class="sello-arte__punto" cx="120" cy="210" r="2.5" />
+  <circle class="sello-arte__punto" cx="120" cy="30" r="2.5" />
+  <circle class="sello-arte__punto" cx="30" cy="120" r="2.5" />
+  <circle class="sello-arte__punto" cx="210" cy="120" r="2.5" />
+</svg>

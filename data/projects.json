@@ -1,0 +1,24 @@
+{
+  "pergaminos": [
+    {
+      "id": "libro-de-las-hojas",
+      "titulo": "El Libro de las Hojas",
+      "subtitulo": "Cuaderno de campo digital",
+      "anio": 2026,
+      "estado": "publicado",
+      "descripcion": "Un almanaque para leer hojas de tabaco con visión clásica: aislamiento, normalización, máscaras de lesiones y un informe que conserva la procedencia de cada número.",
+      "tags": [
+        "Visión clásica",
+        "OpenCV",
+        "FastAPI",
+        "Python"
+      ],
+      "glifo": "❦",
+      "arte": "hoja",
+      "href": "https://el-libro-de-las-hojas.vercel.app",
+      "destacado": true,
+      "cta": "Abrir el libro",
+      "nota": "Demo pública con almacenamiento efímero."
+    }
+  ]
+}
