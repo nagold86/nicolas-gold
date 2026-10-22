@@ -7,6 +7,8 @@
  * cuando el visitante pidió menos movimiento.
  */
 
+import { reglaViva } from './regla.js';
+
 const MOVIMIENTO_REDUCIDO = '(prefers-reduced-motion: reduce)';
 const LIMITE_DPR = 2;
 const LIMITE_PIXELES = 2400000;
@@ -50,6 +52,7 @@ export function initComarca({ brisa, comarca, portada, boton }) {
   /* ----------------------------------------------------------
      Paralaje: una sola variable, leída por el CSS
      ---------------------------------------------------------- */
+  const reglaAvance = reglaViva('[data-comarca]', '--avance', '0');
   let medida = 0;
 
   function parallax() {
@@ -59,7 +62,7 @@ export function initComarca({ brisa, comarca, portada, boton }) {
 
     const recorrido = Math.max(1, portada.offsetHeight);
     const avance = entre(-caja.top / recorrido, 0, 1);
-    comarca.style.setProperty('--avance', avance.toFixed(3));
+    if (reglaAvance) reglaAvance.setProperty('--avance', avance.toFixed(3));
   }
 
   function pedirParallax() {

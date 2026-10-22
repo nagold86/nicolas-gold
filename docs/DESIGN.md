@@ -149,6 +149,11 @@ de `[data-comarca]`, detrás del contenido (`--z-escena: 0`, `--z-brisa: 1`,
 `transform-origin` en píxeles. `pathLength="1"` normaliza el largo del río para
 que todos los hilos compartan el mismo ciclo sin medir el path.
 
+`--avance` y el avance de lectura no se escriben como estilo en línea: la CSP
+(`style-src` sin `'unsafe-inline'`) los bloquearía. `src/js/regla.js` inserta una
+regla en la hoja propia y actualiza su declaración; el navegador la trata como
+CSS de autor.
+
 ### Capa canvas: brisa
 
 `src/js/comarca.js` dibuja polen que sube y hojas que bajan sobre `#brisa`.

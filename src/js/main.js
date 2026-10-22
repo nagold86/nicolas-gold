@@ -7,6 +7,8 @@
  * página se lee igual.
  */
 
+import { reglaViva } from './regla.js';
+
 const MOVIMIENTO_REDUCIDO = '(prefers-reduced-motion: reduce)';
 
 function intentar(nombre, tarea) {
@@ -23,6 +25,7 @@ function intentar(nombre, tarea) {
 function iniciarCabecera() {
   const cabecera = document.querySelector('[data-cabecera]');
   const barra = document.querySelector('[data-progreso]');
+  const reglaBarra = barra ? reglaViva('[data-progreso]', 'transform', 'scaleX(0)') : null;
   const enlaces = [...document.querySelectorAll('.nav__lista a, .nav-movil__panel a')];
   const destinos = enlaces
     .map((enlace) => ({
@@ -41,10 +44,10 @@ function iniciarCabecera() {
       cabecera.dataset.scrolled = recorrido > 12 ? 'true' : 'false';
     }
 
-    if (barra) {
+    if (reglaBarra) {
       const total = document.documentElement.scrollHeight - window.innerHeight;
       const avance = total > 0 ? Math.min(1, Math.max(0, recorrido / total)) : 0;
-      barra.style.transform = `scaleX(${avance.toFixed(4)})`;
+      reglaBarra.transform = `scaleX(${avance.toFixed(4)})`;
     }
 
     const linea = window.innerHeight * 0.4;

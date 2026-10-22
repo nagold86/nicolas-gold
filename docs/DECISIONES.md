@@ -271,3 +271,24 @@ contenido que leer salvo el propio pie.
 portada. Cambiar el color del texto: falla en otro fondo. Acortar el héroe: pierde
 el paisaje.
 
+## ADR-017 · El pulso escribe CSS, no atributos `style`
+
+**Contexto.** En el primer deploy a producción, la CSP `style-src 'self'
+https://fonts.googleapis.com` bloqueó los `element.style` del paralaje y de la
+barra de progreso. La página se veía bien, pero dos gestos no existían y la
+consola registraba una violación por escritura. La auditoría local no lo vio
+porque `tools/serve.mjs` no envía CSP.
+
+**Decisión.** `src/js/regla.js` inserta una regla en la hoja local con
+`insertRule` y actualiza su declaración. La CSP sigue sin `'unsafe-inline'` y el
+navegador trata la regla como CSS de autor. Si no hay hoja accesible, el efecto
+se omite: es adorno, no contenido.
+
+**Consecuencias.** Paralaje y barra funcionan en producción con la misma CSP
+estricta. La verificación de deploy ahora incluye consola limpia y estilos
+computados, no solo la captura.
+
+**Descartado.** Agregar `'unsafe-inline'` a `style-src`: abre la puerta que la CSP
+cerraba. Un `<style>` con nonce fijo: el contenido cambia por cuadro y un hash no
+se puede mantener. Mover el efecto a un canvas: no resuelve la barra de lectura.
+
