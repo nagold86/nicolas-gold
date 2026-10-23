@@ -194,7 +194,8 @@ interacción, 2.2.2 Pausar, detener, ocultar).
 - **Oficio**: cuatro columnas con numeral; sin iconos, el texto sostiene.
 - **Pergamino**: tarjeta de proyecto con cabecera ilustrada, estado
   (`Publicado` / `En forja`) y acceso a la demo. Se genera en la forja desde
-  `data/projects.json`; la tarjeta “El próximo pergamino” ocupa el lugar libre.
+  `data/projects.json`; la tarjeta “El próximo pergamino” ocupa el lugar libre y,
+  si la cantidad de pergaminos es impar, se abre a lo ancho de la grilla.
 - **Carta**: panel de papel con sello, correo, botón de copiar y LinkedIn. El
   botón de copiar solo aparece si existe `navigator.clipboard`.
 

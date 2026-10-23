@@ -19,6 +19,28 @@
       "destacado": true,
       "cta": "Abrir el libro",
       "nota": "Demo pública con almacenamiento efímero."
+    },
+    {
+      "id": "tablero-de-olist",
+      "titulo": "El Tablero de Olist",
+      "subtitulo": "Nueve tablas, ocho pestañas",
+      "anio": 2026,
+      "estado": "publicado",
+      "descripcion": "El marketplace brasileño Olist, con sus nueve tablas unificadas y cuarenta mil comentarios, llevado a un tablero de ocho pestañas: logística, mapas, sentimiento de las reseñas, un modelo que anticipa la calificación y otro que agrupa vendedores.",
+      "tags": [
+        "Streamlit",
+        "LightGBM",
+        "K-Means",
+        "NLP",
+        "Plotly",
+        "Python"
+      ],
+      "glifo": "❖",
+      "arte": "sello",
+      "href": "https://olisttablero.streamlit.app/",
+      "repo": "https://github.com/nagold86/Olist_Analisis",
+      "destacado": false,
+      "cta": "Abrir el tablero"
     }
   ]
 }

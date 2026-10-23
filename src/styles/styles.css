@@ -1868,6 +1868,23 @@ main,
     linear-gradient(180deg, var(--pradera) 0%, var(--papel-hondo) 100%);
 }
 
+/* Con una cantidad impar de pergaminos, el próximo ocupa la fila entera:
+   sello a la izquierda, relato a la derecha. La grilla nunca queda coja. */
+@media (min-width: 901px) {
+  .pergaminos__grilla > .pergamino--proximo:last-child:nth-child(odd) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column: 1 / -1;
+  }
+
+  .pergaminos__grilla > .pergamino--proximo:last-child:nth-child(odd) .pergamino__arte {
+    height: auto;
+    min-height: 16rem;
+    border-right: 1px solid var(--filete);
+    border-bottom: 0;
+  }
+}
+
 @media (hover: hover) {
   .pergamino:hover {
     transform: translateY(-4px);

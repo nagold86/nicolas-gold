@@ -194,8 +194,8 @@ por captura. El veredicto sigue siendo de Boromir.
 **Contexto.** La tentación de inflar métricas en una landing es real.
 
 **Decisión.** Se publica lo que el CV sostiene: años de oficio, roles, estudios
-en curso y un enlace verificado a la demo de El Libro de las Hojas. No hay
-porcentajes inventados ni clientes que no existan.
+en curso y un enlace verificado a cada demo, revisada en un navegador antes de
+publicarla. No hay porcentajes inventados ni clientes que no existan.
 
 **Consecuencias.** El texto envejece bien. La demo se presenta con su límite:
 el almacenamiento es efímero.
