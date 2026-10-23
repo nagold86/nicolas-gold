@@ -7,14 +7,14 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.nagold86.com.ar"
         }
       ],
-      "destination": "https://nagold86.com.ar/:path*",
+      "destination": "https://nagold86.com.ar/$1",
       "permanent": true
     }
   ],
