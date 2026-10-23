@@ -5,6 +5,19 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.nagold86.com.ar"
+        }
+      ],
+      "destination": "https://nagold86.com.ar/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/styles/(.*)",
