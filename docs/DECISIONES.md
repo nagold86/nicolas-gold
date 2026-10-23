@@ -292,3 +292,26 @@ computados, no solo la captura.
 cerraba. Un `<style>` con nonce fijo: el contenido cambia por cuadro y un hash no
 se puede mantener. Mover el efecto a un canvas: no resuelve la barra de lectura.
 
+## ADR-018 · Un dominio, dos proyectos: apex para la landing, subdominio para el libro
+
+**Contexto.** `nagold86.com.ar` ya estaba delegado a Vercel y asignado entero a
+`el-libro-de-las-hojas`. La landing necesitaba el apex y el libro no podía
+compartir host: su cliente usa `const API = "/api"`, una ruta absoluta que bajo
+`/ellibrodelashojas` apuntaría al proyecto equivocado. Un rewrite de path
+exigiría reescribir `/api` y los assets relativos del libro.
+
+**Decisión.** `nagold86.com.ar` y `www` van a `nicolas-gold`; `www` responde 308
+al apex. `libro.nagold86.com.ar` va a `el-libro-de-las-hojas`.
+`/ellibrodelashojas` y sus subrutas responden 307 al subdominio, para que la ruta
+recordada no muera. El DNS sigue en Vercel (ns1/ns2), así que los registros se
+crean dentro de la zona.
+
+**Consecuencias.** Cada proyecto conserva su raíz y sus rutas absolutas. El
+canonical y el `og:url` de la landing se generan con el apex en el build. El
+enlace del pergamino apunta al subdominio. Los certificados los emite Vercel para
+los tres hosts.
+
+**Descartado.** Servir el libro en `/ellibrodelashojas` con rewrites:
+`API = "/api"` y los assets relativos se rompen. Un segundo dominio: el dominio
+ya estaba en Vercel y no hacía falta.
+

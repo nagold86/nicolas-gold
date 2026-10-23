@@ -7,6 +7,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/ellibrodelashojas",
+      "destination": "https://libro.nagold86.com.ar",
+      "permanent": false
+    },
+    {
+      "source": "/ellibrodelashojas/(.*)",
+      "destination": "https://libro.nagold86.com.ar/$1",
+      "permanent": false
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
